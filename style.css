@@ -1,0 +1,99 @@
+td {
+  box-shadow: 1.5px 1.5px 1.5px lightgrey;
+  width: 19px;
+  height: 19px;
+  cursor: crosshair;
+}
+
+#kontainer {
+  border: 5px solid silver;
+  margin: 15px auto;
+  padding: 5px;
+  border-radius: 5px;
+  background-color:white;
+}
+
+#colorPos {
+  position:fixed;
+  bottom:31px;
+  right:80px;
+}
+
+#snap {
+  position:fixed;
+  bottom:40px;
+  right:10px;
+}
+
+body {
+  background: linear-gradient(to bottom right, whitesmoke, white, #eaf4ff);
+
+}
+
+#hrOne { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+  } 
+#hrOne:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+#hrTwo { 
+  height: 30px; 
+  border-style: hidden; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+  } 
+#hrTwo:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -3px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+#eyeDropper {
+  box-shadow: 3px 3px 3px silver;
+  width:120px;
+  height:110px;
+  margin:10px;
+  border-radius: 6px;
+  background-color:whitesmoke;
+  padding:7px;
+  position: fixed;
+  bottom:10px;
+  left: 10px;
+}
+
+#eyeTable {
+  margin: auto;
+  background-color: white;
+}
+
+#eyeCheck {
+  margin-bottom: 15px;
+}
+
+#eyeCell {
+  width: 40px;
+  height: 40px;
+  border:1px dashed black;
+  }
+
+#hex {
+  text-align: center;
+}

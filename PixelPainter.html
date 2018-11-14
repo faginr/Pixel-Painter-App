@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <meta charset="utf-8">
+<head>
+  <title>Paint a pixel image using a grid</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+    </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js">     </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jscript.js"></script>
+
+</head>
+  
+  
+<body onload="init();">
+  <div class="container">
+  <h1 class="jumbotron text-center"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Pixel Paint</h1>
+  <a id="test"></a>
+    <hr width= 70% id="hrOne">
+  <table id="kontainer">
+    <!--  Row 1    -->
+    <tr>
+      <td id="oneOne" onclick="paintOneOne();"></td>
+      <td id="oneTwo" onclick="paintOneTwo();"></td>
+      <td id="oneThree" onclick="paintOneThree();"></td>
+      <td id="oneFour" onclick="paintOneFour();"></td>
+      <td id="oneFive" onclick="paintOneFive();"></td>
+      <td id="oneSix" onclick="paintOneSix();"></td>
+      <td id="oneSeven" onclick="paintOneSeven();"></td>
+      <td id="oneEight" onclick="paintOneEight();"></td>
+      <td id="oneNine" onclick="paintOneNine();"></td>
+      <td id="oneTen" onclick="paintOneTen();"></td>
+       <td id="one11" onclick="paintOne11();"></td>
+       <td id="one12" onclick="paintOne12();"></td>
+       <td id="one13" onclick="paintOne13();"></td>
+       <td id="one14" onclick="paintOne14();"></td>
+       <td id="one15" onclick="paintOne15();"></td>
+       <td id="one16" onclick="paintOne16();"></td>
+       <td id="one17" onclick="paintOne17();"></td>
+       <td id="one18" onclick="paintOne18();"></td>
+       <td id="one19" onclick="paintOne19();"></td>
+       <td id="one20" onclick="paintOne20();"></td>
+       <td id="one21" onclick="paintOne21();"></td>
+       <td id="one22" onclick="paintOne22();"></td>
+       <td id="one23" onclick="paintOne23();"></td>
+       <td id="one24" onclick="paintOne24();"></td>
+       <td id="one25" onclick="paintOne25();"></td>
+    </tr>
+    
+    <!--  Row 2    -->
+    <tr>
+      <td id="twoOne" onclick="paintTwoOne();"></td>
+      <td id="twoTwo" onclick="paintTwoTwo();"></td>
+      <td id="twoThree" onclick="paintTwoThree();"></td>
+      <td id="twoFour" onclick="paintTwoFour();"></td>
+      <td id="twoFive" onclick="paintTwoFive();"></td>
+      <td id="twoSix" onclick="paintTwoSix();"></td>
+      <td id="twoSeven" onclick="paintTwoSeven();"></td>
+      <td id="twoEight" onclick="paintTwoEight();"></td>
+      <td id="twoNine" onclick="paintTwoNine();"></td>
+      <td id="twoTen" onclick="paintTwoTen();"></td>
+      <td id="two11" onclick="paintTwo11();"></td>
+       <td id="two12" onclick="paintTwo12();"></td>
+       <td id="two13" onclick="paintTwo13();"></td>
+       <td id="two14" onclick="paintTwo14();"></td>
+       <td id="two15" onclick="paintTwo15();"></td>
+       <td id="two16" onclick="paintTwo16();"></td>
+       <td id="two17" onclick="paintTwo17();"></td>
+       <td id="two18" onclick="paintTwo18();"></td>
+       <td id="two19" onclick="paintTwo19();"></td>
+       <td id="two20" onclick="paintTwo20();"></td>
+       <td id="two21" onclick="paintTwo21();"></td>
+       <td id="two22" onclick="paintTwo22();"></td>
+       <td id="two23" onclick="paintTwo23();"></td>
+       <td id="two24" onclick="paintTwo24();"></td>
+       <td id="two25" onclick="paintTwo25();"></td>
+    </tr>
+    <!--  Row 3    -->
+    <tr>
+      <td id="threeOne" onclick="paintThreeOne();"></td>
+      <td id="threeTwo" onclick="paintThreeTwo();"></td>
+      <td id="threeThree" onclick="paintThreeThree();"></td>
+      <td id="threeFour" onclick="paintThreeFour();"></td>
+      <td id="threeFive" onclick="paintThreeFive();"></td>
+      <td id="threeSix" onclick="paintThreeSix();"></td>
+      <td id="threeSeven" onclick="paintThreeSeven();"></td>
+      <td id="threeEight" onclick="paintThreeEight();"></td>
+      <td id="threeNine" onclick="paintThreeNine();"></td>
+      <td id="threeTen" onclick="paintThreeTen();"></td>
+      <td id="three11" onclick="paintThree11();"></td>
+       <td id="three12" onclick="paintThree12();"></td>
+       <td id="three13" onclick="paintThree13();"></td>
+       <td id="three14" onclick="paintThree14();"></td>
+       <td id="three15" onclick="paintThree15();"></td>
+       <td id="three16" onclick="paintThree16();"></td>
+       <td id="three17" onclick="paintThree17();"></td>
+       <td id="three18" onclick="paintThree18();"></td>
+       <td id="three19" onclick="paintThree19();"></td>
+       <td id="three20" onclick="paintThree20();"></td>
+       <td id="three21" onclick="paintThree21();"></td>
+       <td id="three22" onclick="paintThree22();"></td>
+       <td id="three23" onclick="paintThree23();"></td>
+       <td id="three24" onclick="paintThree24();"></td>
+       <td id="three25" onclick="paintThree25();"></td>
+    </tr>
+    <!--  Row 4    -->
+    <tr>
+      <td id="fourOne" onclick="paintFourOne();"></td>
+      <td id="fourTwo" onclick="paintFourTwo();"></td>
+      <td id="fourThree" onclick="paintFourThree();"></td>
+      <td id="fourFour" onclick="paintFourFour();"></td>
+      <td id="fourFive" onclick="paintFourFive();"></td>
+      <td id="fourSix" onclick="paintFourSix();"></td>
+      <td id="fourSeven" onclick="paintFourSeven();"></td>
+      <td id="fourEight" onclick="paintFourEight();"></td>
+      <td id="fourNine" onclick="paintFourNine();"></td>
+      <td id="fourTen" onclick="paintFourTen();"></td>
+      <td id="four11" onclick="paintFour11();"></td>
+       <td id="four12" onclick="paintFour12();"></td>
+       <td id="four13" onclick="paintFour13();"></td>
+       <td id="four14" onclick="paintFour14();"></td>
+       <td id="four15" onclick="paintFour15();"></td>
+       <td id="four16" onclick="paintFour16();"></td>
+       <td id="four17" onclick="paintFour17();"></td>
+       <td id="four18" onclick="paintFour18();"></td>
+       <td id="four19" onclick="paintFour19();"></td>
+       <td id="four20" onclick="paintFour20();"></td>
+       <td id="four21" onclick="paintFour21();"></td>
+       <td id="four22" onclick="paintFour22();"></td>
+       <td id="four23" onclick="paintFour23();"></td>
+       <td id="four24" onclick="paintFour24();"></td>
+       <td id="four25" onclick="paintFour25();"></td>
+    </tr>
+    <!--  Row 5    -->
+    <tr>
+      <td id="fiveOne" onclick="paintFiveOne();"></td>
+      <td id="fiveTwo" onclick="paintFiveTwo();"></td>
+      <td id="fiveThree" onclick="paintFiveThree();"></td>
+      <td id="fiveFour" onclick="paintFiveFour();"></td>
+      <td id="fiveFive" onclick="paintFiveFive();"></td>
+      <td id="fiveSix" onclick="paintFiveSix();"></td>
+      <td id="fiveSeven" onclick="paintFiveSeven();"></td>
+      <td id="fiveEight" onclick="paintFiveEight();"></td>
+      <td id="fiveNine" onclick="paintFiveNine();"></td>
+      <td id="fiveTen" onclick="paintFiveTen();"></td>
+      <td id="five11" onclick="paintFive11();"></td>
+       <td id="five12" onclick="paintFive12();"></td>
+       <td id="five13" onclick="paintFive13();"></td>
+       <td id="five14" onclick="paintFive14();"></td>
+       <td id="five15" onclick="paintFive15();"></td>
+       <td id="five16" onclick="paintFive16();"></td>
+       <td id="five17" onclick="paintFive17();"></td>
+       <td id="five18" onclick="paintFive18();"></td>
+       <td id="five19" onclick="paintFive19();"></td>
+       <td id="five20" onclick="paintFive20();"></td>
+       <td id="five21" onclick="paintFive21();"></td>
+       <td id="five22" onclick="paintFive22();"></td>
+       <td id="five23" onclick="paintFive23();"></td>
+       <td id="five24" onclick="paintFive24();"></td>
+       <td id="five25" onclick="paintFive25();"></td>
+    </tr>
+    <!--  Row 6    -->
+    <tr>
+      <td id="sixOne" onclick="paintSixOne();"></td>
+      <td id="sixTwo" onclick="paintSixTwo();"></td>
+      <td id="sixThree" onclick="paintSixThree();"></td>
+      <td id="sixFour" onclick="paintSixFour();"></td>
+      <td id="sixFive" onclick="paintSixFive();"></td>
+      <td id="sixSix" onclick="paintSixSix();"></td>
+      <td id="sixSeven" onclick="paintSixSeven();"></td>
+      <td id="sixEight" onclick="paintSixEight();"></td>
+      <td id="sixNine" onclick="paintSixNine();"></td>
+      <td id="sixTen" onclick="paintSixTen();"></td>
+      <td id="six11" onclick="paintSix11();"></td>
+       <td id="six12" onclick="paintSix12();"></td>
+       <td id="six13" onclick="paintSix13();"></td>
+       <td id="six14" onclick="paintSix14();"></td>
+       <td id="six15" onclick="paintSix15();"></td>
+       <td id="six16" onclick="paintSix16();"></td>
+       <td id="six17" onclick="paintSix17();"></td>
+       <td id="six18" onclick="paintSix18();"></td>
+       <td id="six19" onclick="paintSix19();"></td>
+       <td id="six20" onclick="paintSix20();"></td>
+       <td id="six21" onclick="paintSix21();"></td>
+       <td id="six22" onclick="paintSix22();"></td>
+       <td id="six23" onclick="paintSix23();"></td>
+       <td id="six24" onclick="paintSix24();"></td>
+       <td id="six25" onclick="paintSix25();"></td>
+    </tr>
+    <!--  Row 7    -->
+    <tr>
+      <td id="sevenOne" onclick="paintSevenOne();"></td>
+      <td id="sevenTwo" onclick="paintSevenTwo();"></td>
+      <td id="sevenThree" onclick="paintSevenThree();"></td>
+      <td id="sevenFour" onclick="paintSevenFour();"></td>
+      <td id="sevenFive" onclick="paintSevenFive();"></td>
+      <td id="sevenSix" onclick="paintSevenSix();"></td>
+      <td id="sevenSeven" onclick="paintSevenSeven();"></td>
+      <td id="sevenEight" onclick="paintSevenEight();"></td>
+      <td id="sevenNine" onclick="paintSevenNine();"></td>
+      <td id="sevenTen" onclick="paintSevenTen();"></td>
+      <td id="seven11" onclick="paintSeven11();"></td>
+       <td id="seven12" onclick="paintSeven12();"></td>
+       <td id="seven13" onclick="paintSeven13();"></td>
+       <td id="seven14" onclick="paintSeven14();"></td>
+       <td id="seven15" onclick="paintSeven15();"></td>
+       <td id="seven16" onclick="paintSeven16();"></td>
+       <td id="seven17" onclick="paintSeven17();"></td>
+       <td id="seven18" onclick="paintSeven18();"></td>
+       <td id="seven19" onclick="paintSeven19();"></td>
+       <td id="seven20" onclick="paintSeven20();"></td>
+       <td id="seven21" onclick="paintSeven21();"></td>
+       <td id="seven22" onclick="paintSeven22();"></td>
+       <td id="seven23" onclick="paintSeven23();"></td>
+       <td id="seven24" onclick="paintSeven24();"></td>
+       <td id="seven25" onclick="paintSeven25();"></td>
+    </tr>
+    <!--  Row 8    -->
+    <tr>
+      <td id="eightOne" onclick="paintEightOne();"></td>
+      <td id="eightTwo" onclick="paintEightTwo();"></td>
+      <td id="eightThree" onclick="paintEightThree();"></td>
+      <td id="eightFour" onclick="paintEightFour();"></td>
+      <td id="eightFive" onclick="paintEightFive();"></td>
+      <td id="eightSix" onclick="paintEightSix();"></td>
+      <td id="eightSeven" onclick="paintEightSeven();"></td>
+      <td id="eightEight" onclick="paintEightEight();"></td>
+      <td id="eightNine" onclick="paintEightNine();"></td>
+      <td id="eightTen" onclick="paintEightTen();"></td>
+      <td id="eight11" onclick="paintEight11();"></td>
+       <td id="eight12" onclick="paintEight12();"></td>
+       <td id="eight13" onclick="paintEight13();"></td>
+       <td id="eight14" onclick="paintEight14();"></td>
+       <td id="eight15" onclick="paintEight15();"></td>
+       <td id="eight16" onclick="paintEight16();"></td>
+       <td id="eight17" onclick="paintEight17();"></td>
+       <td id="eight18" onclick="paintEight18();"></td>
+       <td id="eight19" onclick="paintEight19();"></td>
+       <td id="eight20" onclick="paintEight20();"></td>
+       <td id="eight21" onclick="paintEight21();"></td>
+       <td id="eight22" onclick="paintEight22();"></td>
+       <td id="eight23" onclick="paintEight23();"></td>
+       <td id="eight24" onclick="paintEight24();"></td>
+       <td id="eight25" onclick="paintEight25();"></td>
+    </tr>
+    <!--  Row 9    -->
+    <tr>
+      <td id="nineOne" onclick="paintNineOne();"></td>
+      <td id="nineTwo" onclick="paintNineTwo();"></td>
+      <td id="nineThree" onclick="paintNineThree();"></td>
+      <td id="nineFour" onclick="paintNineFour();"></td>
+      <td id="nineFive" onclick="paintNineFive();"></td>
+      <td id="nineSix" onclick="paintNineSix();"></td>
+      <td id="nineSeven" onclick="paintNineSeven();"></td>
+      <td id="nineEight" onclick="paintNineEight();"></td>
+      <td id="nineNine" onclick="paintNineNine();"></td>
+      <td id="nineTen" onclick="paintNineTen();"></td>
+      <td id="nine11" onclick="paintNine11();"></td>
+       <td id="nine12" onclick="paintNine12();"></td>
+       <td id="nine13" onclick="paintNine13();"></td>
+       <td id="nine14" onclick="paintNine14();"></td>
+       <td id="nine15" onclick="paintNine15();"></td>
+       <td id="nine16" onclick="paintNine16();"></td>
+       <td id="nine17" onclick="paintNine17();"></td>
+       <td id="nine18" onclick="paintNine18();"></td>
+       <td id="nine19" onclick="paintNine19();"></td>
+       <td id="nine20" onclick="paintNine20();"></td>
+       <td id="nine21" onclick="paintNine21();"></td>
+       <td id="nine22" onclick="paintNine22();"></td>
+       <td id="nine23" onclick="paintNine23();"></td>
+       <td id="nine24" onclick="paintNine24();"></td>
+       <td id="nine25" onclick="paintNine25();"></td>
+    </tr>
+    <!--  Row 10    -->
+    <tr>
+      <td id="tenOne" onclick="paintTenOne();"></td>
+      <td id="tenTwo" onclick="paintTenTwo();"></td>
+      <td id="tenThree" onclick="paintTenThree();"></td>
+      <td id="tenFour" onclick="paintTenFour();"></td>
+      <td id="tenFive" onclick="paintTenFive();"></td>
+      <td id="tenSix" onclick="paintTenSix();"></td>
+      <td id="tenSeven" onclick="paintTenSeven();"></td>
+      <td id="tenEight" onclick="paintTenEight();"></td>
+      <td id="tenNine" onclick="paintTenNine();"></td>
+      <td id="tenTen" onclick="paintTenTen();"></td>
+      <td id="ten11" onclick="paintTen11();"></td>
+       <td id="ten12" onclick="paintTen12();"></td>
+       <td id="ten13" onclick="paintTen13();"></td>
+       <td id="ten14" onclick="paintTen14();"></td>
+       <td id="ten15" onclick="paintTen15();"></td>
+       <td id="ten16" onclick="paintTen16();"></td>
+       <td id="ten17" onclick="paintTen17();"></td>
+       <td id="ten18" onclick="paintTen18();"></td>
+       <td id="ten19" onclick="paintTen19();"></td>
+       <td id="ten20" onclick="paintTen20();"></td>
+       <td id="ten21" onclick="paintTen21();"></td>
+       <td id="ten22" onclick="paintTen22();"></td>
+       <td id="ten23" onclick="paintTen23();"></td>
+       <td id="ten24" onclick="paintTen24();"></td>
+       <td id="ten25" onclick="paintTen25();"></td>
+    </tr>
+    <!--  Row 11    -->
+    <tr>
+      <td id="elevenOne" onclick="paintElevenOne();"></td>
+      <td id="elevenTwo" onclick="paintElevenTwo();"></td>
+      <td id="elevenThree" onclick="paintElevenThree();"></td>
+      <td id="elevenFour" onclick="paintElevenFour();"></td>
+      <td id="elevenFive" onclick="paintElevenFive();"></td>
+      <td id="elevenSix" onclick="paintElevenSix();"></td>
+      <td id="elevenSeven" onclick="paintElevenSeven();"></td>
+      <td id="elevenEight" onclick="paintElevenEight();"></td>
+      <td id="elevenNine" onclick="paintElevenNine();"></td>
+      <td id="elevenTen" onclick="paintElevenTen();"></td>
+      <td id="eleven11" onclick="paintEleven11();"></td>
+       <td id="eleven12" onclick="paintEleven12();"></td>
+       <td id="eleven13" onclick="paintEleven13();"></td>
+       <td id="eleven14" onclick="paintEleven14();"></td>
+       <td id="eleven15" onclick="paintEleven15();"></td>
+       <td id="eleven16" onclick="paintEleven16();"></td>
+       <td id="eleven17" onclick="paintEleven17();"></td>
+       <td id="eleven18" onclick="paintEleven18();"></td>
+       <td id="eleven19" onclick="paintEleven19();"></td>
+       <td id="eleven20" onclick="paintEleven20();"></td>
+       <td id="eleven21" onclick="paintEleven21();"></td>
+       <td id="eleven22" onclick="paintEleven22();"></td>
+       <td id="eleven23" onclick="paintEleven23();"></td>
+       <td id="eleven24" onclick="paintEleven24();"></td>
+       <td id="eleven25" onclick="paintEleven25();"></td>
+    </tr>
+    <!--  Row 12    -->
+    <tr>
+      <td id="twelveOne" onclick="paintTwelveOne();"></td>
+      <td id="twelveTwo" onclick="paintTwelveTwo();"></td>
+      <td id="twelveThree" onclick="paintTwelveThree();"></td>
+      <td id="twelveFour" onclick="paintTwelveFour();"></td>
+      <td id="twelveFive" onclick="paintTwelveFive();"></td>
+      <td id="twelveSix" onclick="paintTwelveSix();"></td>
+      <td id="twelveSeven" onclick="paintTwelveSeven();"></td>
+      <td id="twelveEight" onclick="paintTwelveEight();"></td>
+      <td id="twelveNine" onclick="paintTwelveNine();"></td>
+      <td id="twelveTen" onclick="paintTwelveTen();"></td>
+      <td id="twelve11" onclick="paintTwelve11();"></td>
+       <td id="twelve12" onclick="paintTwelve12();"></td>
+       <td id="twelve13" onclick="paintTwelve13();"></td>
+       <td id="twelve14" onclick="paintTwelve14();"></td>
+       <td id="twelve15" onclick="paintTwelve15();"></td>
+       <td id="twelve16" onclick="paintTwelve16();"></td>
+       <td id="twelve17" onclick="paintTwelve17();"></td>
+       <td id="twelve18" onclick="paintTwelve18();"></td>
+       <td id="twelve19" onclick="paintTwelve19();"></td>
+       <td id="twelve20" onclick="paintTwelve20();"></td>
+       <td id="twelve21" onclick="paintTwelve21();"></td>
+       <td id="twelve22" onclick="paintTwelve22();"></td>
+       <td id="twelve23" onclick="paintTwelve23();"></td>
+       <td id="twelve24" onclick="paintTwelve24();"></td>
+       <td id="twelve25" onclick="paintTwelve25();"></td>
+    </tr>
+    <!--  Row 13    -->
+    <tr>
+      <td id="thirteenOne" onclick="paintThirteenOne();"></td>
+      <td id="thirteenTwo" onclick="paintThirteenTwo();"></td>
+      <td id="thirteenThree" onclick="paintThirteenThree();"></td>
+      <td id="thirteenFour" onclick="paintThirteenFour();"></td>
+      <td id="thirteenFive" onclick="paintThirteenFive();"></td>
+      <td id="thirteenSix" onclick="paintThirteenSix();"></td>
+      <td id="thirteenSeven" onclick="paintThirteenSeven();"></td>
+      <td id="thirteenEight" onclick="paintThirteenEight();"></td>
+      <td id="thirteenNine" onclick="paintThirteenNine();"></td>
+      <td id="thirteenTen" onclick="paintThirteenTen();"></td>
+      <td id="thirteen11" onclick="paintThirteen11();"></td>
+       <td id="thirteen12" onclick="paintThirteen12();"></td>
+       <td id="thirteen13" onclick="paintThirteen13();"></td>
+       <td id="thirteen14" onclick="paintThirteen14();"></td>
+       <td id="thirteen15" onclick="paintThirteen15();"></td>
+       <td id="thirteen16" onclick="paintThirteen16();"></td>
+       <td id="thirteen17" onclick="paintThirteen17();"></td>
+       <td id="thirteen18" onclick="paintThirteen18();"></td>
+       <td id="thirteen19" onclick="paintThirteen19();"></td>
+       <td id="thirteen20" onclick="paintThirteen20();"></td>
+       <td id="thirteen21" onclick="paintThirteen21();"></td>
+       <td id="thirteen22" onclick="paintThirteen22();"></td>
+       <td id="thirteen23" onclick="paintThirteen23();"></td>
+       <td id="thirteen24" onclick="paintThirteen24();"></td>
+       <td id="thirteen25" onclick="paintThirteen25();"></td>
+    </tr>
+    <!--  Row 14    -->
+    <tr>
+      <td id="fourteenOne" onclick="paintFourteenOne();"></td>
+      <td id="fourteenTwo" onclick="paintFourteenTwo();"></td>
+      <td id="fourteenThree" onclick="paintFourteenThree();"></td>
+      <td id="fourteenFour" onclick="paintFourteenFour();"></td>
+      <td id="fourteenFive" onclick="paintFourteenFive();"></td>
+      <td id="fourteenSix" onclick="paintFourteenSix();"></td>
+      <td id="fourteenSeven" onclick="paintFourteenSeven();"></td>
+      <td id="fourteenEight" onclick="paintFourteenEight();"></td>
+      <td id="fourteenNine" onclick="paintFourteenNine();"></td>
+      <td id="fourteenTen" onclick="paintFourteenTen();"></td>
+      <td id="fourteen11" onclick="paintFourteen11();"></td>
+       <td id="fourteen12" onclick="paintFourteen12();"></td>
+       <td id="fourteen13" onclick="paintFourteen13();"></td>
+       <td id="fourteen14" onclick="paintFourteen14();"></td>
+       <td id="fourteen15" onclick="paintFourteen15();"></td>
+       <td id="fourteen16" onclick="paintFourteen16();"></td>
+       <td id="fourteen17" onclick="paintFourteen17();"></td>
+       <td id="fourteen18" onclick="paintFourteen18();"></td>
+       <td id="fourteen19" onclick="paintFourteen19();"></td>
+       <td id="fourteen20" onclick="paintFourteen20();"></td>
+       <td id="fourteen21" onclick="paintFourteen21();"></td>
+       <td id="fourteen22" onclick="paintFourteen22();"></td>
+       <td id="fourteen23" onclick="paintFourteen23();"></td>
+       <td id="fourteen24" onclick="paintFourteen24();"></td>
+       <td id="fourteen25" onclick="paintFourteen25();"></td>
+    </tr>
+    <!--  Row 15    -->
+    <tr>
+      <td id="fifteenOne" onclick="paintFifteenOne();"></td>
+      <td id="fifteenTwo" onclick="paintFifteenTwo();"></td>
+      <td id="fifteenThree" onclick="paintFifteenThree();"></td>
+      <td id="fifteenFour" onclick="paintFifteenFour();"></td>
+      <td id="fifteenFive" onclick="paintFifteenFive();"></td>
+      <td id="fifteenSix" onclick="paintFifteenSix();"></td>
+      <td id="fifteenSeven" onclick="paintFifteenSeven();"></td>
+      <td id="fifteenEight" onclick="paintFifteenEight();"></td>
+      <td id="fifteenNine" onclick="paintFifteenNine();"></td>
+      <td id="fifteenTen" onclick="paintFifteenTen();"></td>
+      <td id="fifteen11" onclick="paintFifteen11();"></td>
+       <td id="fifteen12" onclick="paintFifteen12();"></td>
+       <td id="fifteen13" onclick="paintFifteen13();"></td>
+       <td id="fifteen14" onclick="paintFifteen14();"></td>
+       <td id="fifteen15" onclick="paintFifteen15();"></td>
+       <td id="fifteen16" onclick="paintFifteen16();"></td>
+       <td id="fifteen17" onclick="paintFifteen17();"></td>
+       <td id="fifteen18" onclick="paintFifteen18();"></td>
+       <td id="fifteen19" onclick="paintFifteen19();"></td>
+       <td id="fifteen20" onclick="paintFifteen20();"></td>
+       <td id="fifteen21" onclick="paintFifteen21();"></td>
+       <td id="fifteen22" onclick="paintFifteen22();"></td>
+       <td id="fifteen23" onclick="paintFifteen23();"></td>
+       <td id="fifteen24" onclick="paintFifteen24();"></td>
+       <td id="fifteen25" onclick="paintFifteen25();"></td>
+    </tr>
+    <!--  Row 16    -->
+    <tr>
+      <td id="sixteenOne" onclick="paintSixteenOne();"></td>
+      <td id="sixteenTwo" onclick="paintSixteenTwo();"></td>
+      <td id="sixteenThree" onclick="paintSixteenThree();"></td>
+      <td id="sixteenFour" onclick="paintSixteenFour();"></td>
+      <td id="sixteenFive" onclick="paintSixteenFive();"></td>
+      <td id="sixteenSix" onclick="paintSixteenSix();"></td>
+      <td id="sixteenSeven" onclick="paintSixteenSeven();"></td>
+      <td id="sixteenEight" onclick="paintSixteenEight();"></td>
+      <td id="sixteenNine" onclick="paintSixteenNine();"></td>
+      <td id="sixteenTen" onclick="paintSixteenTen();"></td>
+      <td id="sixteen11" onclick="paintSixteen11();"></td>
+       <td id="sixteen12" onclick="paintSixteen12();"></td>
+       <td id="sixteen13" onclick="paintSixteen13();"></td>
+       <td id="sixteen14" onclick="paintSixteen14();"></td>
+       <td id="sixteen15" onclick="paintSixteen15();"></td>
+       <td id="sixteen16" onclick="paintSixteen16();"></td>
+       <td id="sixteen17" onclick="paintSixteen17();"></td>
+       <td id="sixteen18" onclick="paintSixteen18();"></td>
+       <td id="sixteen19" onclick="paintSixteen19();"></td>
+       <td id="sixteen20" onclick="paintSixteen20();"></td>
+       <td id="sixteen21" onclick="paintSixteen21();"></td>
+       <td id="sixteen22" onclick="paintSixteen22();"></td>
+       <td id="sixteen23" onclick="paintSixteen23();"></td>
+       <td id="sixteen24" onclick="paintSixteen24();"></td>
+       <td id="sixteen25" onclick="paintSixteen25();"></td>
+    </tr>
+    <!--  Row 17    -->
+    <tr>
+      <td id="seventeenOne" onclick="paintSeventeenOne();"></td>
+      <td id="seventeenTwo" onclick="paintSeventeenTwo();"></td>
+      <td id="seventeenThree" onclick="paintSeventeenThree();"></td>
+      <td id="seventeenFour" onclick="paintSeventeenFour();"></td>
+      <td id="seventeenFive" onclick="paintSeventeenFive();"></td>
+      <td id="seventeenSix" onclick="paintSeventeenSix();"></td>
+      <td id="seventeenSeven" onclick="paintSeventeenSeven();"></td>
+      <td id="seventeenEight" onclick="paintSeventeenEight();"></td>
+      <td id="seventeenNine" onclick="paintSeventeenNine();"></td>
+      <td id="seventeenTen" onclick="paintSeventeenTen();"></td>
+      <td id="seventeen11" onclick="paintSeventeen11();"></td>
+       <td id="seventeen12" onclick="paintSeventeen12();"></td>
+       <td id="seventeen13" onclick="paintSeventeen13();"></td>
+       <td id="seventeen14" onclick="paintSeventeen14();"></td>
+       <td id="seventeen15" onclick="paintSeventeen15();"></td>
+       <td id="seventeen16" onclick="paintSeventeen16();"></td>
+       <td id="seventeen17" onclick="paintSeventeen17();"></td>
+       <td id="seventeen18" onclick="paintSeventeen18();"></td>
+       <td id="seventeen19" onclick="paintSeventeen19();"></td>
+       <td id="seventeen20" onclick="paintSeventeen20();"></td>
+       <td id="seventeen21" onclick="paintSeventeen21();"></td>
+       <td id="seventeen22" onclick="paintSeventeen22();"></td>
+       <td id="seventeen23" onclick="paintSeventeen23();"></td>
+       <td id="seventeen24" onclick="paintSeventeen24();"></td>
+       <td id="seventeen25" onclick="paintSeventeen25();"></td>
+    </tr>
+    <!--  Row 18    -->
+    <tr>
+      <td id="eighteenOne" onclick="paintEighteenOne();"></td>
+      <td id="eighteenTwo" onclick="paintEighteenTwo();"></td>
+      <td id="eighteenThree" onclick="paintEighteenThree();"></td>
+      <td id="eighteenFour" onclick="paintEighteenFour();"></td>
+      <td id="eighteenFive" onclick="paintEighteenFive();"></td>
+      <td id="eighteenSix" onclick="paintEighteenSix();"></td>
+      <td id="eighteenSeven" onclick="paintEighteenSeven();"></td>
+      <td id="eighteenEight" onclick="paintEighteenEight();"></td>
+      <td id="eighteenNine" onclick="paintEighteenNine();"></td>
+      <td id="eighteenTen" onclick="paintEighteenTen();"></td>
+      <td id="eighteen11" onclick="paintEighteen11();"></td>
+       <td id="eighteen12" onclick="paintEighteen12();"></td>
+       <td id="eighteen13" onclick="paintEighteen13();"></td>
+       <td id="eighteen14" onclick="paintEighteen14();"></td>
+       <td id="eighteen15" onclick="paintEighteen15();"></td>
+       <td id="eighteen16" onclick="paintEighteen16();"></td>
+       <td id="eighteen17" onclick="paintEighteen17();"></td>
+       <td id="eighteen18" onclick="paintEighteen18();"></td>
+       <td id="eighteen19" onclick="paintEighteen19();"></td>
+       <td id="eighteen20" onclick="paintEighteen20();"></td>
+       <td id="eighteen21" onclick="paintEighteen21();"></td>
+       <td id="eighteen22" onclick="paintEighteen22();"></td>
+       <td id="eighteen23" onclick="paintEighteen23();"></td>
+       <td id="eighteen24" onclick="paintEighteen24();"></td>
+       <td id="eighteen25" onclick="paintEighteen25();"></td>
+    </tr>
+    <!--  Row 19    -->
+    <tr>
+      <td id="nineteenOne" onclick="paintNineteenOne();"></td>
+      <td id="nineteenTwo" onclick="paintNineteenTwo();"></td>
+      <td id="nineteenThree" onclick="paintNineteenThree();"></td>
+      <td id="nineteenFour" onclick="paintNineteenFour();"></td>
+      <td id="nineteenFive" onclick="paintNineteenFive();"></td>
+      <td id="nineteenSix" onclick="paintNineteenSix();"></td>
+      <td id="nineteenSeven" onclick="paintNineteenSeven();"></td>
+      <td id="nineteenEight" onclick="paintNineteenEight();"></td>
+      <td id="nineteenNine" onclick="paintNineteenNine();"></td>
+      <td id="nineteenTen" onclick="paintNineteenTen();"></td>
+      <td id="nineteen11" onclick="paintNineteen11();"></td>
+       <td id="nineteen12" onclick="paintNineteen12();"></td>
+       <td id="nineteen13" onclick="paintNineteen13();"></td>
+       <td id="nineteen14" onclick="paintNineteen14();"></td>
+       <td id="nineteen15" onclick="paintNineteen15();"></td>
+       <td id="nineteen16" onclick="paintNineteen16();"></td>
+       <td id="nineteen17" onclick="paintNineteen17();"></td>
+       <td id="nineteen18" onclick="paintNineteen18();"></td>
+       <td id="nineteen19" onclick="paintNineteen19();"></td>
+      <td id="nineteen20" onclick="paintNineteen20();"></td>
+       <td id="nineteen21" onclick="paintNineteen21();"></td>
+       <td id="nineteen22" onclick="paintNineteen22();"></td>
+       <td id="nineteen23" onclick="paintNineteen23();"></td>
+       <td id="nineteen24" onclick="paintNineteen24();"></td>
+       <td id="nineteen25" onclick="paintNineteen25();"></td>
+    </tr>
+    <!--  Row 20    -->
+    <tr>
+      <td id="twentyOne" onclick="paintTwentyOne();"></td>
+      <td id="twentyTwo" onclick="paintTwentyTwo();"></td>
+      <td id="twentyThree" onclick="paintTwentyThree();"></td>
+      <td id="twentyFour" onclick="paintTwentyFour();"></td>
+      <td id="twentyFive" onclick="paintTwentyFive();"></td>
+      <td id="twentySix" onclick="paintTwentySix();"></td>
+      <td id="twentySeven" onclick="paintTwentySeven();"></td>
+      <td id="twentyEight" onclick="paintTwentyEight();"></td>
+      <td id="twentyNine" onclick="paintTwentyNine();"></td>
+      <td id="twentyTen" onclick="paintTwentyTen();"></td>
+      <td id="twenty11" onclick="paintTwenty11();"></td>
+       <td id="twenty12" onclick="paintTwenty12();"></td>
+       <td id="twenty13" onclick="paintTwenty13();"></td>
+       <td id="twenty14" onclick="paintTwenty14();"></td>
+       <td id="twenty15" onclick="paintTwenty15();"></td>
+       <td id="twenty16" onclick="paintTwenty16();"></td>
+       <td id="twenty17" onclick="paintTwenty17();"></td>
+       <td id="twenty18" onclick="paintTwenty18();"></td>
+       <td id="twenty19" onclick="paintTwenty19();"></td>
+       <td id="twenty20" onclick="paintTwenty20();"></td>
+       <td id="twenty21" onclick="paintTwenty21();"></td>
+       <td id="twenty22" onclick="paintTwenty22();"></td>
+       <td id="twenty23" onclick="paintTwenty23();"></td>
+       <td id="twenty24" onclick="paintTwenty24();"></td>
+       <td id="twenty25" onclick="paintTwenty25();"></td>
+    </tr>
+    <!--  Row 21    -->
+    <tr>
+      <td id="twentyOneOne" onclick="paintTwentyOneOne();"></td>
+      <td id="twentyOneTwo" onclick="paintTwentyOneTwo();"></td>
+      <td id="twentyOneThree" onclick="paintTwentyOneThree();"></td>
+      <td id="twentyOneFour" onclick="paintTwentyOneFour();"></td>
+      <td id="twentyOneFive" onclick="paintTwentyOneFive();"></td>
+      <td id="twentyOneSix" onclick="paintTwentyOneSix();"></td>
+      <td id="twentyOneSeven" onclick="paintTwentyOneSeven();"></td>
+      <td id="twentyOneEight" onclick="paintTwentyOneEight();"></td>
+      <td id="twentyOneNine" onclick="paintTwentyOneNine();"></td>
+      <td id="twentyOneTen" onclick="paintTwentyOneTen();"></td>
+      <td id="twentyOne11" onclick="paintTwentyOne11();"></td>
+       <td id="twentyOne12" onclick="paintTwentyOne12();"></td>
+       <td id="twentyOne13" onclick="paintTwentyOne13();"></td>
+       <td id="twentyOne14" onclick="paintTwentyOne14();"></td>
+       <td id="twentyOne15" onclick="paintTwentyOne15();"></td>
+       <td id="twentyOne16" onclick="paintTwentyOne16();"></td>
+       <td id="twentyOne17" onclick="paintTwentyOne17();"></td>
+       <td id="twentyOne18" onclick="paintTwentyOne18();"></td>
+       <td id="twentyOne19" onclick="paintTwentyOne19();"></td>
+       <td id="twentyOne20" onclick="paintTwentyOne20();"></td>
+       <td id="twentyOne21" onclick="paintTwentyOne21();"></td>
+       <td id="twentyOne22" onclick="paintTwentyOne22();"></td>
+       <td id="twentyOne23" onclick="paintTwentyOne23();"></td>
+       <td id="twentyOne24" onclick="paintTwentyOne24();"></td>
+       <td id="twentyOne25" onclick="paintTwentyOne25();"></td>
+    </tr>
+    <!--  Row 22    -->
+    <tr>
+      <td id="twentyTwoOne" onclick="paintTwentyTwoOne();"></td>
+      <td id="twentyTwoTwo" onclick="paintTwentyTwoTwo();"></td>
+      <td id="twentyTwoThree" onclick="paintTwentyTwoThree();"></td>
+      <td id="twentyTwoFour" onclick="paintTwentyTwoFour();"></td>
+      <td id="twentyTwoFive" onclick="paintTwentyTwoFive();"></td>
+      <td id="twentyTwoSix" onclick="paintTwentyTwoSix();"></td>
+      <td id="twentyTwoSeven" onclick="paintTwentyTwoSeven();"></td>
+      <td id="twentyTwoEight" onclick="paintTwentyTwoEight();"></td>
+      <td id="twentyTwoNine" onclick="paintTwentyTwoNine();"></td>
+      <td id="twentyTwoTen" onclick="paintTwentyTwoTen();"></td>
+      <td id="twentyTwo11" onclick="paintTwentyTwo11();"></td>
+       <td id="twentyTwo12" onclick="paintTwentyTwo12();"></td>
+       <td id="twentyTwo13" onclick="paintTwentyTwo13();"></td>
+       <td id="twentyTwo14" onclick="paintTwentyTwo14();"></td>
+       <td id="twentyTwo15" onclick="paintTwentyTwo15();"></td>
+       <td id="twentyTwo16" onclick="paintTwentyTwo16();"></td>
+       <td id="twentyTwo17" onclick="paintTwentyTwo17();"></td>
+       <td id="twentyTwo18" onclick="paintTwentyTwo18();"></td>
+       <td id="twentyTwo19" onclick="paintTwentyTwo19();"></td>
+       <td id="twentyTwo20" onclick="paintTwentyTwo20();"></td>
+       <td id="twentyTwo21" onclick="paintTwentyTwo21();"></td>
+       <td id="twentyTwo22" onclick="paintTwentyTwo22();"></td>
+       <td id="twentyTwo23" onclick="paintTwentyTwo23();"></td>
+       <td id="twentyTwo24" onclick="paintTwentyTwo24();"></td>
+       <td id="twentyTwo25" onclick="paintTwentyTwo25();"></td>
+    </tr>
+    <!--  Row 23    -->
+    <tr>
+      <td id="twentyThreeOne" onclick="paintTwentyThreeOne();"></td>
+      <td id="twentyThreeTwo" onclick="paintTwentyThreeTwo();"></td>
+      <td id="twentyThreeThree" onclick="paintTwentyThreeThree();"></td>
+      <td id="twentyThreeFour" onclick="paintTwentyThreeFour();"></td>
+      <td id="twentyThreeFive" onclick="paintTwentyThreeFive();"></td>
+      <td id="twentyThreeSix" onclick="paintTwentyThreeSix();"></td>
+      <td id="twentyThreeSeven" onclick="paintTwentyThreeSeven();"></td>
+      <td id="twentyThreeEight" onclick="paintTwentyThreeEight();"></td>
+      <td id="twentyThreeNine" onclick="paintTwentyThreeNine();"></td>
+      <td id="twentyThreeTen" onclick="paintTwentyThreeTen();"></td>
+      <td id="twentyThree11" onclick="paintTwentyThree11();"></td>
+       <td id="twentyThree12" onclick="paintTwentyThree12();"></td>
+       <td id="twentyThree13" onclick="paintTwentyThree13();"></td>
+       <td id="twentyThree14" onclick="paintTwentyThree14();"></td>
+       <td id="twentyThree15" onclick="paintTwentyThree15();"></td>
+       <td id="twentyThree16" onclick="paintTwentyThree16();"></td>
+       <td id="twentyThree17" onclick="paintTwentyThree17();"></td>
+       <td id="twentyThree18" onclick="paintTwentyThree18();"></td>
+       <td id="twentyThree19" onclick="paintTwentyThree19();"></td>
+       <td id="twentyThree20" onclick="paintTwentyThree20();"></td>
+       <td id="twentyThree21" onclick="paintTwentyThree21();"></td>
+       <td id="twentyThree22" onclick="paintTwentyThree22();"></td>
+       <td id="twentyThree23" onclick="paintTwentyThree23();"></td>
+       <td id="twentyThree24" onclick="paintTwentyThree24();"></td>
+       <td id="twentyThree25" onclick="paintTwentyThree25();"></td>
+    </tr>
+    <!--  Row 24    -->
+    <tr>
+      <td id="twentyFourOne" onclick="paintTwentyFourOne();"></td>
+      <td id="twentyFourTwo" onclick="paintTwentyFourTwo();"></td>
+      <td id="twentyFourThree" onclick="paintTwentyFourThree();"></td>
+      <td id="twentyFourFour" onclick="paintTwentyFourFour();"></td>
+      <td id="twentyFourFive" onclick="paintTwentyFourFive();"></td>
+      <td id="twentyFourSix" onclick="paintTwentyFourSix();"></td>
+      <td id="twentyFourSeven" onclick="paintTwentyFourSeven();"></td>
+      <td id="twentyFourEight" onclick="paintTwentyFourEight();"></td>
+      <td id="twentyFourNine" onclick="paintTwentyFourNine();"></td>
+      <td id="twentyFourTen" onclick="paintTwentyFourTen();"></td>
+      <td id="twentyFour11" onclick="paintTwentyFour11();"></td>
+       <td id="twentyFour12" onclick="paintTwentyFour12();"></td>
+       <td id="twentyFour13" onclick="paintTwentyFour13();"></td>
+       <td id="twentyFour14" onclick="paintTwentyFour14();"></td>
+       <td id="twentyFour15" onclick="paintTwentyFour15();"></td>
+       <td id="twentyFour16" onclick="paintTwentyFour16();"></td>
+       <td id="twentyFour17" onclick="paintTwentyFour17();"></td>
+       <td id="twentyFour18" onclick="paintTwentyFour18();"></td>
+       <td id="twentyFour19" onclick="paintTwentyFour19();"></td>
+       <td id="twentyFour20" onclick="paintTwentyFour20();"></td>
+       <td id="twentyFour21" onclick="paintTwentyFour21();"></td>
+       <td id="twentyFour22" onclick="paintTwentyFour22();"></td>
+       <td id="twentyFour23" onclick="paintTwentyFour23();"></td>
+       <td id="twentyFour24" onclick="paintTwentyFour24();"></td>
+       <td id="twentyFour25" onclick="paintTwentyFour25();"></td>
+    </tr>
+    <!--  Row 25    -->
+    <tr>
+      <td id="twentyFiveOne" onclick="paintTwentyFiveOne();"></td>
+      <td id="twentyFiveTwo" onclick="paintTwentyFiveTwo();"></td>
+      <td id="twentyFiveThree" onclick="paintTwentyFiveThree();"></td>
+      <td id="twentyFiveFour" onclick="paintTwentyFiveFour();"></td>
+      <td id="twentyFiveFive" onclick="paintTwentyFiveFive();"></td>
+      <td id="twentyFiveSix" onclick="paintTwentyFiveSix();"></td>
+      <td id="twentyFiveSeven" onclick="paintTwentyFiveSeven();"></td>
+      <td id="twentyFiveEight" onclick="paintTwentyFiveEight();"></td>
+      <td id="twentyFiveNine" onclick="paintTwentyFiveNine();"></td>
+      <td id="twentyFiveTen" onclick="paintTwentyFiveTen();"></td>
+      <td id="twentyFive11" onclick="paintTwentyFive11();"></td>
+       <td id="twentyFive12" onclick="paintTwentyFive12();"></td>
+       <td id="twentyFive13" onclick="paintTwentyFive13();"></td>
+       <td id="twentyFive14" onclick="paintTwentyFive14();"></td>
+       <td id="twentyFive15" onclick="paintTwentyFive15();"></td>
+       <td id="twentyFive16" onclick="paintTwentyFive16();"></td>
+       <td id="twentyFive17" onclick="paintTwentyFive17();"></td>
+       <td id="twentyFive18" onclick="paintTwentyFive18();"></td>
+       <td id="twentyFive19" onclick="paintTwentyFive19();"></td>
+       <td id="twentyFive20" onclick="paintTwentyFive20();"></td>
+       <td id="twentyFive21" onclick="paintTwentyFive21();"></td>
+       <td id="twentyFive22" onclick="paintTwentyFive22();"></td>
+       <td id="twentyFive23" onclick="paintTwentyFive23();"></td>
+       <td id="twentyFive24" onclick="paintTwentyFive24();"></td>
+       <td id="twentyFive25" onclick="paintTwentyFive25();"></td>
+    </tr>
+  </table>
+    <hr width= 70% id="hrTwo">
+    <div id="eyeDropper">
+    <input type="checkbox" id="eyeCheck" onchange="dropper();"> Eyedropper
+     <table id="eyeTable">
+       <td id ="eyeCell"></td>
+     </table> 
+      <p id="hex"></p>
+      </div>
+  </div>
+  <div id="colorPos">
+    <p>Select Color: <span class="glyphicon glyphicon-tint" aria-hidden="true"></span>
+  <input type=color id="cursorColor" value="#FFFFFF" onchange="brushColor();">
+  </p>
+  </div>
+<button id="snap"                          onclick="takeScreenShot()">
+      <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save
+    </button>
+</body>
+</html>
