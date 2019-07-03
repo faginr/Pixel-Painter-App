@@ -1,99 +1,183 @@
-td {
-  box-shadow: 1.5px 1.5px 1.5px lightgrey;
-  width: 19px;
-  height: 19px;
-  cursor: crosshair;
+:root {
+  --background-color: #eee;
 }
 
-#kontainer {
+header {
+  /* padding: 0 5rem 0 5rem; */
+  width: 680px;
+  height: 10px;
+  margin: auto;
+  margin-bottom: 12rem;
+}
+
+#heading {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+header h1 {
+  border-radius: 4px;
+}
+
+/* #P{color: red;}
+#A{color: #FBBC05}
+#I{color: green}
+#N{color: blue}
+#T{color: rgb(133, 28, 133)} */
+
+.table {
   border: 5px solid silver;
   margin: 15px auto;
-  padding: 5px;
-  border-radius: 5px;
-  background-color:white;
-}
-
-#colorPos {
-  position:fixed;
-  bottom:31px;
-  right:80px;
-}
-
-#snap {
-  position:fixed;
-  bottom:40px;
-  right:10px;
-}
-
-body {
-  background: linear-gradient(to bottom right, whitesmoke, white, #eaf4ff);
-
-}
-
-#hrOne { 
-  height: 30px; 
-  border-style: solid; 
-  border-color: #8c8b8b; 
-  border-width: 1px 0 0 0; 
-  border-radius: 20px; 
-  } 
-#hrOne:before { 
-  display: block; 
-  content: ""; 
-  height: 30px; 
-  margin-top: -30px; 
-  border-style: solid; 
-  border-color: #8c8b8b; 
-  border-width: 0 0 1px 0; 
-  border-radius: 20px; 
-}
-
-#hrTwo { 
-  height: 30px; 
-  border-style: hidden; 
-  border-color: #8c8b8b; 
-  border-width: 1px 0 0 0; 
-  border-radius: 20px; 
-  } 
-#hrTwo:before { 
-  display: block; 
-  content: ""; 
-  height: 30px; 
-  margin-top: -3px; 
-  border-style: solid; 
-  border-color: #8c8b8b; 
-  border-width: 0 0 1px 0; 
-  border-radius: 20px; 
-}
-
-#eyeDropper {
-  box-shadow: 3px 3px 3px silver;
-  width:120px;
-  height:110px;
-  margin:10px;
-  border-radius: 6px;
-  background-color:whitesmoke;
-  padding:7px;
-  position: fixed;
-  bottom:10px;
-  left: 10px;
-}
-
-#eyeTable {
-  margin: auto;
+  /* padding: 5px; */
   background-color: white;
+  width: 400px;
+  height: 400px;
+  z-index: 3;
 }
 
-#eyeCheck {
-  margin-bottom: 15px;
+.cell {
+  border: 1px solid lightgrey;
+  /* box-shadow: 1.5px 1.5px 1.5px lightgrey; */
+  background-color: #ffffff;
+  width: 16px;
+  height: 16px;
+  cursor: crosshair;
+  z-index: 4;
 }
 
-#eyeCell {
+#hrOne {
+  width: 547.4px;
+  height: 30px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+
+#hrTwo {
+  width: 547.4px;
+  height: 30px;
+  border-style: hidden;
+  border-color: #8c8b8b;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+#hrTwo:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -3px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+.menus {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: -18.8rem;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.menu-left {
+  margin: 2rem;
+  width: 116px;
+  height: 108px;
+  background: var(--background-color);
+  padding: 0.5rem;
+  box-shadow: 2px 2px 2px grey;
+  visibility: visible;
+}
+
+.eye-table {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.eye-cell {
   width: 40px;
   height: 40px;
-  border:1px dashed black;
+  border: 1px dashed black;
+  background: #ffffff;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: Grey;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 2;
+  left: 12rem;
+  bottom: 11rem;
+  opacity: 0;
+  transition: opacity 4s;
+}
+
+.menu-left-text {
+  display: flex;
+  justify-content: center;
+}
+
+.eye-cell:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu-right {
+  bottom: 3rem;
+  right: 3rem; 
+  width: 200px;
+  height: 108px;
+  margin: 2rem;
+  margin-right: 2rem;
+  text-align: right;
+  background: var(--background-color);
+  padding: 1rem;
+  box-shadow: 2px 2px 2px grey;
+  visibility: visible;
+}
+
+.menu-right p {
+  margin-right: 15px;
+}
+
+.menu-right-top {
+  margin-top: 5px; 
+  display: flex;
+  justify-content: right;
+}
+.menu-right-bottom {
+  padding-top: 4px;
+}
+
+
+@media (max-width: 930px){
+
+  .menu-left {
+    margin: 1rem;
   }
 
-#hex {
+  .menu-right {
+    width: 134px;
+  height: 120px;
+  margin-right: 1rem;
   text-align: center;
+}
+
+.menu-right-top {
+  display: block
+}
+
+.menus {
+  margin-top: -18.8rem;
+}
 }
